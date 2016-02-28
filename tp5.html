@@ -1,0 +1,129 @@
+<html>
+	<head>
+		<title>TP_5</title>
+		<style>
+			body
+			{
+				width: 100%;
+				height: 100%;
+				margin: 0;
+			}
+			
+			.carre
+			{
+				width: 100px ;
+				height: 100px ;
+				
+				background-color: red;
+				border: 1px black solid ;
+				border: 1px black solid ;
+				
+				position: absolute;
+				left: 0;
+			}
+			.deux
+			{
+				top: 100px ;
+			}
+			.trois
+			{
+
+				top: 200px ;
+			}
+			.quatre
+			{
+				top:300px ;
+			}
+			.cinq
+			{
+				top:400px ;
+			}
+			.six
+			{
+				top:500px ;
+			}
+			.sept
+			{
+				top:600px ;
+			}
+			.huit
+			{
+				top:700px ;
+			}
+			.neuf
+			{
+				top:800px ;
+			}
+			.dix
+			{
+				top:900px ;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="carre un">
+		</div>
+		<div class="carre deux">
+		</div>
+		<div class="carre trois">
+		</div>
+		<div class="carre quatre">
+		</div>
+		<div class="carre cinq">
+		</div>
+		<div class="carre six">
+		</div>
+		<div class="carre sept">
+		</div>
+		<div class="carre huit">
+		</div>
+		<div class="carre neuf">
+		</div>
+		<div class="carre dix">
+		</div>
+	</body>
+</html>
+
+<script type="text/javascript">
+	
+	function move_right(nb,id,largeur)
+	{
+		var displace ;
+		
+		objet = document.getElementsByClassName('carre')[nb-1] ;
+		
+		if(objet.style.left != '')
+		{
+			displace = parseInt(objet.style.left) + 10 ;
+			objet.style.left = displace+'px' ;
+		}
+		else
+		{
+			objet.style.left = '10px' ;
+		}
+		
+		if(displace > largeur - 110)
+		{
+			clearInterval(id) ;
+		}
+	}
+	
+	function start(largeur)
+	{
+		id = [] ;
+		id[0] = setInterval('move_right(1,id[0],largeur)',100) ;
+		setTimeout('id[1] = setInterval(\'move_right(2,id[1],largeur)\',100)',1000) ;
+		setTimeout('id[2] = setInterval(\'move_right(3,id[2],largeur)\',100)',2000) ;
+		setTimeout('id[3] = setInterval(\'move_right(4,id[3],largeur)\',100)',3000) ;
+		setTimeout('id[4] = setInterval(\'move_right(5,id[4],largeur)\',100)',4000) ;
+		setTimeout('id[5] = setInterval(\'move_right(6,id[5],largeur)\',100)',5000) ;
+		setTimeout('id[6] = setInterval(\'move_right(7,id[6],largeur)\',100)',6000) ;
+		setTimeout('id[7] = setInterval(\'move_right(8,id[7],largeur)\',100)',7000) ;
+		setTimeout('id[8] = setInterval(\'move_right(9,id[8],largeur)\',100)',8000) ;
+		setTimeout('id[9] = setInterval(\'move_right(10,id[9],largeur)\',100)',9000) ;
+	}
+	
+	var largeur = window.innerWidth ;
+	
+	setTimeout('start(largeur)',4000) ;
+</script>
